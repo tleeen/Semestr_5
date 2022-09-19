@@ -1,0 +1,24 @@
+{ "lastname": "Сидоров",
+  "name": "Николай",
+  "patronymic": "Андреевич",
+  "year": 2007,
+  "well": 8,
+  "periodTrain": 11,
+  "favoriteDis": [
+    "Математика",
+    "Физика",
+    "Информатика"
+  ],
+  "placeReg": {
+    "country": "Россия",
+    "city": "Кемерово",
+    "house": 5,
+    "flat": 37
+  },
+  "placeRes": {
+    "country": "Россия",
+    "city": "Кемерово",
+    "house": 5,
+    "flat": 37
+  }
+}

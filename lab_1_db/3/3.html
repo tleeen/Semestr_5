@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Третье задание</title>
+</head>
+<body>
+<h1 align="center">Введите число</h1>
+<div align="center">
+    <input type="text"  class="divInput">
+    <p>
+        <button class="divBut">Результат</button>
+    </p>
+    <p>
+    <label class="divLabel"></label>
+    </p>
+    <script>
+
+        function factorial(num) {
+            if (num === 1) {
+                return 1;
+            } else {
+                return num * factorial(num - 1)
+            }
+        }
+
+        function average(num) {
+            let a = 0;
+            for (let i = 1; i < num + 1; i++){
+                a = a + i;
+            }
+            return a / num
+        }
+
+        document.querySelector('.divBut').addEventListener('click', ()=>{
+            let data = document.querySelector('.divInput').value;
+            if ((parseInt(data) % 2) === 0){
+                document.querySelector('.divLabel').innerHTML = 'Факториал данного числа равен: ' + factorial(parseInt(data));
+            }
+            else if (((parseInt(data) % 2) === 1)){
+                document.querySelector('.divLabel').innerHTML = 'Среднее арифметическое данного числа равно: ' + average(parseInt(data));
+            }
+            else{
+                document.querySelector('.divLabel').innerHTML = 'Ошибочно введены данные!';
+            }
+        })
+    </script>
+</div>
+</body>
+</html>

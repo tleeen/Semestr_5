@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    td{
+      width: 260px;
+      height:60px;
+      border: solid 1px silver;
+      text-align:center;
+    }
+  </style>
+  <title>Седьмое задание</title>
+</head>
+<body>
+<div id="divMain" align="center">
+  <script>
+    function tableCreat(word1, word2){
+      const table = document.createElement('table');
+      let tr = document.createElement('tr');
+      let td1 = document.createElement('td');
+      td1.innerHTML = `${word1}`;
+      let td2 = document.createElement('td');
+      td2.innerHTML = `${word2}`;
+
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      table.appendChild(tr);
+      document.getElementById('divMain').appendChild(table);
+    }
+
+    let schoolkid = {
+      lastname: 'Сидоров',
+      name: 'Николай',
+      patronymic: 'Андреевич',
+      year: '2007',
+      well: '8',
+      favoriteDis: ['Математика', 'Физика', 'Информатика'],
+      placeReg: {
+        country: 'Россия',
+        city: 'Кемерово',
+        house: '5',
+        flat: '37'
+      },
+      placeRes: {
+        country: 'Россия',
+        city: 'Кемерово',
+        house: '5',
+        flat: '37'
+      },
+      printInf: function (){
+        document.getElementById('divMain').innerHTML = `<h3 align="center">Информация о школьнике: ${this.lastname} ${this.name} ${this.patronymic}</h3>`;
+        tableCreat('<h4>Характеристика</h4>', '<h4>Значение</h4>');
+        tableCreat('Год рождения', `${this.year}`);
+        tableCreat('Класс', `${this.well}`);
+        tableCreat('Любимые дисциплины', `${this.favoriteDis[0]}, ${this.favoriteDis[1]}, ${this.favoriteDis[2]}`);
+        tableCreat('Место регистрации', `Страна : ${this.placeReg.country}, Город : ${this.placeReg.city}, Номер дома : ${this.placeReg.house}, Номер квартиры : ${this.placeReg.flat}`);
+        tableCreat('Место проживания', `Страна : ${this.placeRes.country}, Город : ${this.placeRes.city}, Номер дома : ${this.placeRes.house}, Номер квартиры : ${this.placeRes.flat}`);
+      }
+    }
+
+    schoolkid.printInf()
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    td{
+      width: 150px;
+      height:60px;
+      border: solid 1px silver;
+      text-align:center;
+    }
+  </style>
+  <title>Четвёртое задание</title>
+</head>
+<body>
+<h1 align="center">Введите код направления</h1>
+<div align="center">
+  <input type="text"  class="divInput">
+  <p>
+    <button class="divBut">Результат</button>
+  </p>
+  <p>
+    <label class="divLabel"></label>
+  </p>
+  <div id="divTable"></div>
+  <script>
+
+    function tableCreat(word1, word2, word3){
+      const table = document.createElement('table');
+      let tr = document.createElement('tr');
+      let td1 = document.createElement('td');
+      td1.innerHTML = `${word1}`;
+      let td2 = document.createElement('td');
+      td2.innerHTML = `${word2}`;
+      let td3 = document.createElement('td');
+      td3.innerHTML = `${word3}`;
+
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3)
+      table.appendChild(tr);
+      document.getElementById('divTable').appendChild(table);
+    }
+
+    class Stud{
+        constructor(lastname, name, well, kod) {
+          this.lastname = lastname;
+          this.name = name;
+          this.well = well;
+          this.kod = kod;
+        }
+    }
+
+    let stud1 = new Stud('Иванов', 'Петр', 3, 123);
+    let stud2 = new Stud('Воробьев', 'Максим', 3, 123);
+    let stud3 = new Stud('Султанова', 'Екатерина', 1, 321);
+    let stud4 = new Stud('Ровков', 'Иван', 1, 123);
+    let stud5 = new Stud('Искандиров', 'Марат', 2, 321);
+    let stud6 = new Stud('Носков', 'Роман', 2, 123);
+
+    let students = [[stud1, stud2, stud3, stud4, stud5, stud6]];
+
+    document.querySelector('.divBut').addEventListener('click', ()=>{
+      let data = document.querySelector('.divInput').value;
+      if (parseInt(data) === 123){
+        document.getElementById('divTable').innerHTML = '';
+        document.querySelector('.divLabel').innerHTML = 'Студенты с кодом направления 123: ';
+        tableCreat('<h4>Фамилия</h4>', '<h4>Имя</h4>', '<h4>Курс</h4>')
+        tableCreat(`${students[0][0].lastname}`, `${students[0][0].name}`, `${students[0][0].well}`)
+        tableCreat(`${students[0][1].lastname}`, `${students[0][1].name}`, `${students[0][1].well}`)
+        tableCreat(`${students[0][3].lastname}`, `${students[0][3].name}`, `${students[0][3].well}`)
+        tableCreat(`${students[0][5].lastname}`, `${students[0][5].name}`, `${students[0][5].well}`)
+        console.log('Информация о студентах других направлений:');
+        console.log(`${students[0][2].lastname}, ${students[0][2].name}, ${students[0][2].well}`);
+        console.log(`${students[0][4].lastname}, ${students[0][4].name}, ${students[0][4].well}`);
+      }
+      else if (parseInt(data) === 321){
+        document.getElementById('divTable').innerHTML = ''
+        document.querySelector('.divLabel').innerHTML = 'Студенты с кодом направления 321: ';
+        tableCreat('<h4>Фамилия</h4>', '<h4>Имя</h4>', '<h4>Курс</h4>')
+        tableCreat(`${students[0][2].lastname}`, `${students[0][2].name}`, `${students[0][2].well}`)
+        tableCreat(`${students[0][4].lastname}`, `${students[0][4].name}`, `${students[0][4].well}`)
+        console.log('Информация о студентах других направлений:');
+        console.log(`${students[0][0].lastname}, ${students[0][0].name}, ${students[0][0].well}`);
+        console.log(`${students[0][1].lastname}, ${students[0][1].name}, ${students[0][1].well}`);
+        console.log(`${students[0][3].lastname}, ${students[0][3].name}, ${students[0][3].well}`);
+        console.log(`${students[0][5].lastname}, ${students[0][5].name}, ${students[0][5].well}`);
+      }
+      else{
+        document.querySelector('.divLabel').innerHTML = 'Ошибочно введены данные!';
+      }
+    })
+  </script>
+</div>
+</body>
+</html>

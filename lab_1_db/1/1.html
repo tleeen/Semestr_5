@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        td{
+            width: 60px;
+            height:60px;
+            border: solid 1px silver;
+            text-align:center;
+        }
+    </style>
+    <title>Первое задание</title>
+</head>
+<body>
+    <h1 align="center">Таблица умнножения на 5</h1>
+    <div align="center" id="divTable">
+        <script>
+            const table = document.createElement('table');
+            let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            td1.innerHTML = '<h4>Число</h4>';
+            let td2 = document.createElement('td');
+            td2.innerHTML = '<h4>Значение</h4>';
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            table.appendChild(tr);
+            document.getElementById('divTable').appendChild(table);
+
+            for(let i = 1; i<11; i++){
+
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                td1.innerHTML = `${i}`;
+                let td2 = document.createElement('td');
+                td2.innerHTML = `${i * 5}`;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                table.appendChild(tr);
+            }
+        </script>
+    </div>
+</body>
+</html>
