@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Статьи</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>1) Краткая информация о статьях</h1>
+<form action="/artickes" method="post">
+    <input type="submit" value="Cписок статей" />
+    <span></span>
+</form>
+<h1>2) Введите текст</h1>
+<form action="/artickes4" method="post">
+    <label>
+        <input name="text" type="text" size="40">
+    </label>
+    <input type="submit" value="Поиск по названию" />
+    <span></span>
+</form>
+<h1>3) Выберите автора</h1>
+<form action="/artickes5" method="post">
+    <label>
+        <select size="6" name="aut">
+            <option>Иванов</option>
+            <option>Воробьёв</option>
+            <option>Хопта</option>
+            <option>Белов</option>
+            <option>Набоков</option>
+            <option>Кучер</option>
+        </select>
+    </label>
+    <input type="submit" value="Поиск по автору" />
+    <span></span>
+</form>
+<h1>4) Создание статьи</h1>
+<form action="/p_insert" method="post">
+    <input type="submit" value="Создать статью" />
+    <span></span>
+</form>
+<h1>5) Рейтинг</h1>
+<form action="/artickes9" method="post">
+    <input type="submit" value="Вывести рейтинг статей" />
+    <span></span>
+</form>
+<h1>6) Поиск по дате</h1>
+<form action="/artickes10" method="post">
+    <label>
+        <input name="dat1" type="text" size="40">
+    </label>
+    <label>
+        <input name="dat2" type="text" size="40">
+    </label>
+    <input type="submit" value="Поиск" />
+    <span></span>
+</form>
+</body>
+</html>
